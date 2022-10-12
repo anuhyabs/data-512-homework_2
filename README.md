@@ -2,19 +2,18 @@
 
 ### Goal of the Project
 
-The goal of this project is to explore the concept of bias in data using Wikipedia articles on political figures from different countries combined with a dataset of country populations. The quality of each article is estimated using a machine learning service called ORES. The purpose of the project is to helps understand the causes and consequences of biased data in large, complex data
+The goal of this project is to explore the concept of bias in data using Wikipedia articles on political figures from different countries combined with a dataset of country populations. The quality of each article is estimated using a machine learning service called [ORES](https://www.mediawiki.org/wiki/ORES). The purpose of the project is to help understand the causes and consequences of biased data in large, complex data
 science projects.
 
 ### Source Data
-The source data comes from **Wikimedia Foundation REST API** which offers a cacheable and straightforward access to Wikimedia's content and data. 
+The source data for the Wikipedia articles on politicians comes from **MediaWiki Action API** which offers access to wiki features like authetication, page operations and search. The source data for the population data is the **Population Reference Bureau**, a private and nonprofit organization, that specializes in collecting statistics on the environment, and health and structure of populations.
 
-Link to the Wikimedia Foundation REST API terms of use: https://www.mediawiki.org/wiki/REST_API#Terms_and_conditions
+Link to the Mediawiki Action API terms of use: https://foundation.wikimedia.org/wiki/Terms_of_Use/en
 
 ### API Documentation
 Links to relevant API Documentation:
-- https://en.wikipedia.org/api/rest_v1/
-- https://wikitech.wikimedia.org/wiki/Analytics/AQS/Pageviews
-- https://wikimedia.org/api/rest_v1/#!/Pageviews_data/get_metrics_pageviews_aggregate_project_access_agent_granularity_start_end
+- https://www.mediawiki.org/wiki/API:Info
+- https://www.prb.org/international/indicator/population/table
 
 ### Project Structure
 
@@ -25,8 +24,10 @@ data-512-homework_2
 │   ├── wp_countries-no_match.csv
 │   └── wp_politicians_by_country.csv
 ├── raw
-│   ├── politicians_by_country_SEPT.2022
-│   └── politicians_by_country_SEPT.2022.csv
+│   ├── politicians_by_country_SEPT.2022.csv
+│   └── population_by_country_2022.csv
+├── results
+│   └── results.ipynb
 ├── sample
 │   ├── wp_ores_example.ipynb
 │   └── wp_page_info_example.ipynb
@@ -39,18 +40,39 @@ data-512-homework_2
 ### File Descriptions
 
 **data**:
-- *dinosaur_genera.cleaned.SEPT.2022.csv* : A CSV file conatining the list of Dinosaur pages from Wikipedia.
-- *dino_monthly_desktop_201501-202209.json* : This file is obtained from the data_acquisition notebook and contains data on the monthly desktop page traffic.
-- *dino_monthly_mobile_201501-202209.json* : This file is obtained from the data_acquisition notebook and contains data on the monthly mobile app and web traffic.
-- *dino_monthly_cumulative_201501-202209.json* : This file is obtained from the data_acquisition notebook and contains data on the monthly cumulative (sum of all movile and all desktop) page traffic.
+- *wp_article_quality-no_match.csv* : A list of the articles that do not have a page quality value.
+- *wp_countries-no_match.csv* : A list of all the countries that do not have match in the population dataset.
+- *wp_politicians_by_country.csv* : The resulting dataset after combining the Wikipedia data on politicians with the population dataset.
+
+**raw**:
+- *politicians_by_country_SEPT.2022.csv* : The list of all the Wikipedia article pages on [poiliticians by country](https://en.wikipedia.org/wiki/Category:Politicians_by_nationality) used as the source data for looking up page quality values.
+- *population_by_country_2022.csv* : The population dataset drawn from the [world population data sheet](https://www.prb.org/international/indicator/population/table) that is used to combine with the politiciand data before analysis..
 
 **results**:
-- *maximum_minimum_average.png* : Time series result for the articles that have the highest average page requests and the lowest average page requests for desktop access and mobile access.
-- *top_ten_peaks.png* : Time series result for the top 10 article pages by largest (peak) page views over the entire time by access type.
-- *fewest_months.png* :  Time series result to show pages that have the fewest months of available data.
+- *results.ipynb*: Notebook containing the resukts of the data analysis.
+
+**sample**:
+- *wp_ores_example.ipynb* : Example code to make a ORES request.
+- *wp_page_info_example.ipynb* : Example code to make a page info request.
 
 **source**:
-- *data_acquisition.ipynb* : In this notebook, the data is obtained using the pageviews API.  The counts of pageviews are collected for a set of Dinosaur pages from Wikipedia.
-- *data analysis.ipynb* : In this notebook, basic data visual analysis is performed to graph the Dinosaur subset as a timeseries for Desktop and Mobile access type.
+- homework2.ipynb - Code for colection and analysis of data.
 
 ### Research Implications
+
+1. What biases did you expect to find in the data (before you started working with it),
+and why?
+2. What (potential) sources of bias did you discover in the course of your data
+processing and analysis?
+3. What might your results suggest about (English) Wikipedia as a data source?
+4. What might your results suggest about the internet and global society in general?
+5. Can you think of a realistic data science research situation where using these data
+(to train a model, perform a hypothesis-driven research, or make business
+decisions) might create biased or misleading results, due to the inherent gaps and
+limitations of the data?
+6. Can you think of a realistic data science research situation where using these data
+(to train a model, perform a hypothesis-driven research, or make business
+decisions) might still be appropriate and useful, despite its inherent limitations and
+biases?
+7. How might a researcher supplement or transform this dataset to potentially correct
+for the limitations/biases you observed?
