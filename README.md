@@ -56,7 +56,7 @@ data-512-homework_2
 - *wp_page_info_example.ipynb* : Example code to make a page info request.
 
 **source**:
-- homework2.ipynb - Code for colection and analysis of data.
+- *homework2.ipynb* - Code for collection and analysis of data.
 
 ### Research Implications
 
