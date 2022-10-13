@@ -62,6 +62,9 @@ data-512-homework_2
 
 1. What biases did you expect to find in the data (before you started working with it),
 and why?
+
+Before starting the analysis, I expected that probably big English speaking countries (or probably the most popular and maybe rich ones) would have highest number of articles and highest quality of articles as well. The reason being that you just expect more people in such countries to access Wikipedia pages often and since the articles in Wikipedia are peer-reviewed based on a [Wikipedia COntent Assessment](https://en.wikipedia.org/wiki/Wikipedia:Content_assessment), it just seems inituitive to think that such countries would have more number of articles with higher quality content pages.
+
 2. What (potential) sources of bias did you discover in the course of your data
 processing and analysis?
 3. What might your results suggest about (English) Wikipedia as a data source?
