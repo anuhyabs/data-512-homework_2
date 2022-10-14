@@ -82,7 +82,7 @@ Before beginning the analysis I suspected bigger and richer English speaking cou
 
 2. What (potential) sources of bias did you discover in the course of your data processing and analysis?
 
-    The web-crawling done on the Wikipedia page to generate a list of article pages about politicians from a wide range of countries did not capture politicians from major English speaking countries (as seen above). The data collection was flawed. Taking this file as the source of the data analysis, leads to bias as a major category of countries is not accounted for in the data. 
+    The web-crawling done on the [Wikipedia page](https://en.wikipedia.org/wiki/Category:Politicians_by_nationality) to generate a list of article pages about politicians from a wide range of countries did not capture politicians from major English speaking countries (as seen above). The data collection was flawed. Taking this file as the source of the data analysis, leads to bias as a major category of countries is not accounted for in the data. 
 
 3. How might a researcher supplement or transform this dataset to potentially correct for the limitations/biases you observed?
 
